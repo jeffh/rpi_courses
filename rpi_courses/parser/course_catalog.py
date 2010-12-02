@@ -27,7 +27,9 @@ class CourseCatalog(object):
     @staticmethod
     def from_xml_str(xml_str):
         "Creates a new CourseCatalog instance from an string containing xml."
-        return CourseCatalog(BeautifulStoneSoup(xml_str))
+        return CourseCatalog(BeautifulStoneSoup(xml_str,
+            convertEntities=BeautifulStoneSoup.XML_ENTITIES
+        ))
         
     @staticmethod
     def from_stream(stream):
@@ -56,22 +58,21 @@ class CourseCatalog(object):
         """
         return tuple([c for c in self.crosslistings[crn].crns if c != crn])
 
-
-    def find_course(self, partial):
+    def find_courses(self, partial):
         """Finds all courses by a given substring. This is case-insensitive.
         """
         partial = partial.lower()
         keys = self.courses.keys()
         keys = [k for k in keys if k.lower().find(partial) != -1]
         courses = [self.courses[k] for k in keys]
-        return set(courses)
+        return list(set(courses))
         
     def find_course_by_crn(self, crn):
         """Searches all courses by CRNs. Not particularly efficient.
         Returns None if not found.
         """
         for name, course in self.courses.iteritems():
-            if course.crn == crn:
+            if crn in course:
                 return course
         return None
 

@@ -1,10 +1,13 @@
 Overview
 ========
 
-``rpi_courses`` is a simple Python_ library for reading RPI_'s course schedule.
+``rpi_courses`` is a simple Python_ library for reading and using RPI_'s
+course schedule.
 
 It can parse the `XML files`_ provided on RPI's SIS system and provides a
 primitive object-oriented API layer to access the course information.
+
+Also, it provides rudimentary method to computing schedules using constraints.
 
 .. _Python: http://python.org/
 .. _RPI: http://rpi.edu/

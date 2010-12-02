@@ -28,6 +28,9 @@ class FrozenDict(collections.Mapping):
 
     def __getitem__(self, key):
         return self._d[key]
+        
+    def __setitem__(self, key, value):
+        raise TypeError, "FrozenDict is immutable."
 
     def __hash__(self):
         # It would have been simpler and maybe more obvious to 
@@ -39,5 +42,5 @@ class FrozenDict(collections.Mapping):
             self._hash = 0
             for key, value in self.iteritems():
                 self._hash ^= hash(key)
-                self._hash
+                self._hash ^= hash(value)
         return self._hash

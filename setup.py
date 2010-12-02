@@ -24,6 +24,7 @@ setup(
     test_requires=[
         'mock',
         'nose',
+        'constraint',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',

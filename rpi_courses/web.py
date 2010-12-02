@@ -35,6 +35,5 @@ def is_xml(filename):
     return filename.strip().endswith('.xml')
 
 def list_xml_files(url=DEFAULT_URL):
-    """Gets all the xml files.
-    """
+    "Gets all the xml files."
     return list(filter(is_xml, list_files(url)))
