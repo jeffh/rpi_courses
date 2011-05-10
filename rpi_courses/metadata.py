@@ -1,6 +1,6 @@
 __author__ = "Jeff Hui"
 __author_email__ = "contrib@jeffhui.net"
-__copyright__ = "Copyright 2010, Jeff Hui"
+__copyright__ = "Copyright 2011, Jeff Hui"
 __license__ = "MIT"
 
 __version__ = "0.9.0"
