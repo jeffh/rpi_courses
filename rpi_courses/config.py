@@ -25,3 +25,6 @@ if DEBUG:
 
 # where RPI's xml files are located.
 DEFAULT_URL = "http://sis.rpi.edu/reg/rocs/"
+
+# TODO: this may be good to parse (for textbooks)
+HTML_URL = "http://sis.rpi.edu/stuclshr.htm"
