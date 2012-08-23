@@ -19,7 +19,7 @@ Usage
 
 To install::
 
-    pip install rpi_courses
+    pip install RPICourses
 
 Then you can import it to your python scripts::
 
