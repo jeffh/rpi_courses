@@ -2,7 +2,7 @@ Overview
 ========
 
 ``rpi_courses`` is a simple Python_ library for reading and using RPI_'s
-course schedule.
+course schedule. This has been extracted from YACS_.
 
 It can parse the `XML files`_ provided on RPI's SIS system and provides a
 primitive object-oriented API layer to access the course information.
@@ -12,6 +12,7 @@ Also, it provides rudimentary method to computing schedules using constraints.
 .. _Python: http://python.org/
 .. _RPI: http://rpi.edu/
 .. _XML files: http://sis.rpi.edu/reg/rocs/
+.. _YACS: https://github.com/jeffh/YACS
 
 Usage
 -----

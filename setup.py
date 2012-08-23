@@ -6,7 +6,7 @@ with open('README.rst') as handle:
 
 setup(
     name='RPICourses',
-    description=README,
+    description='A data scraping library to read course data from RPI.',
     license='MIT',
     version='1.0.0',
     author='Jeff Hui',
