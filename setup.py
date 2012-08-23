@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
 
+with open('README.rst') as handle:
+    README = handle.read()
+
 setup(
     name='RPICourses',
-    description=md.__description__,
+    description=README,
     license='MIT',
     version='1.0.0',
     author='Jeff Hui',
@@ -14,11 +17,6 @@ setup(
         'BeautifulSoup',
     ],
     long_description=open('README.rst').read(),
-    test_suite=['rpi_courses.tests'],
-    test_requires=[
-        'mock',
-        'nose',
-    ],
     classifiers=[
         'Development Status :: 4 - Beta',
         #'Development Status :: 5 - Production/Stable' # I wish
