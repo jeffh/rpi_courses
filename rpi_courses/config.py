@@ -2,7 +2,7 @@ import logging
 import logging.handlers
 import sys
 
-
+DEBUG = False
 LOG_FILENAME = 'logging'
 
 logger = logging.getLogger('rpi_courses')
@@ -17,17 +17,6 @@ else:
 
 # fallback, so there's no warning of no handlers
 logger.addHandler(NullHandler())
-
-if DEBUG:
-    # stdout
-    handler = logging.StreamHandler(sys.stdout)
-    handler.setLevel(logging.DEBUG)
-    logger.addHandler(handler)
-
-    # stderr
-    handler = logging.StreamHandler(sys.stderr)
-    handler.setLevel(logging.ERROR)
-    logger.addHandler(handler)
 
 SIS_URL = "http://sis.rpi.edu/reg/"
 # where ROCS's xml files are located.
