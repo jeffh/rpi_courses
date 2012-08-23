@@ -143,55 +143,21 @@ Underneath the hood, ``compute_schedule`` is a simple wrapper to the Scheduler o
 TODOs
 =====
 
-Subject Code Mapping
---------------------
-
-It would be nice if we knew `what subject codes mapped to`_ (in full name).
-
-.. _what subject codes mapped to: http://catalog.rpi.edu/content.php?catoid=9&navoid=208
-
 Major/Minor Requirements
 ------------------------
 
 If possible, provide some way to access the course requirements for every major. This would
 require a massive undertaking.
 
-Course Descriptions
--------------------
-
-Provide way to hook into the `Academic Catalog`_ for course descriptions.
-This would require being able to parse with catalog to load and then scrape
-the appropriate information from the ajaxy page. The AJAX pages are as follows::
-
-    http://catalog.rpi.edu/ajax/preview_course.php?catoid=9&coid=14238&show
-
-which returns html where we can get the title and description (ajaxcourseindentfix class)::
-
-    <div class="ajaxcourseindentfix">
-        <h3>ARCH 1200 - Beginners Architecture Career Discovery Program</h3>
-        <hr>
-          Two-week introduction to architecture for rising juniors and seniors includes morning programs and introductory lectures in history and theory of architecture, computing and simulation, freehand and extreme drawing, building ecologies, building conservation, and construction systems.  There will be field trips and career counseling.  Afternoons will have individually critiqueed (tutored) design studios, group and individual projects, reviews, and public presentation.  Acts as an opportunity for career discovery to decide whether a design education in architecture is appropriate.  Summer term annually.  Dates TBA. 9:00 - 4:00 pm.
-          <br><br>
-          <strong>When Offered:</strong>  Summer term annually.
-          <br><br> <br><br>
-          <em>Credit Hours:</em>  <em>  </em> <br><br>
-    </div>
-
-Alternative, the print view provides a nice way to batch-process many courses at once::
-
-    http://catalog.rpi.edu/content.php?cpage=1&expand=1&catoid=9&navoid=209&print=&
-    
-However, both of these methods would require permission from RPI to scrape. We could
-also ask for alternative methods of accessing this data.
-
-
-.. _Academic Catalog: http://www.rpi.edu/academics/catalog/
-
 Solver Optimizations
 --------------------
 
 The current course solver is a naive implementation. Optimize it by providing more
 detailed constraints and apply better solver algorithms.
+
+The solver library has been moved to a `separate library`_.
+
+.. separate library: http://github.com/jeffh/pyconstraints
 
 Notes Analysis
 --------------
