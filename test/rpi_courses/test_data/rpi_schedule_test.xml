@@ -7,7 +7,7 @@
 		<CRN>76296</CRN> 
 	</CROSSLISTING>
 	<COURSE name="GRAPH THEORY" dept="CSCI" num="4260" credmin="4" credmax="4" gradetype=""> 
-		<SECTION crn="73485" num="01" students="40" seats="40"> 
+		<SECTION crn="73485" num="01" students="10" seats="40"> 
 			<PERIOD type="LEC" instructor="Goldberg" start="1400" end="1550" location=" "> 
 				<DAY>1</DAY> 
 				<DAY>4</DAY> 
@@ -16,7 +16,7 @@
 		</SECTION> 
 	</COURSE>
 	<COURSE name="GRAPH THEORY" dept="MATH" num="4150" credmin="4" credmax="4" gradetype=""> 
-		<SECTION crn="76296" num="01" students="30" seats="30"> 
+		<SECTION crn="76296" num="01" students="29" seats="30"> 
 			<PERIOD type="LEC" instructor="Goldberg" start="1400" end="1550" location=" "> 
 				<DAY>1</DAY> 
 				<DAY>4</DAY> 
@@ -34,13 +34,13 @@
 		</SECTION> 
 	</COURSE>
 	<COURSE name="INTRO TO PHILOSOPHY" dept="PHIL" num="1110" credmin="4" credmax="4" gradetype=""> 
-		<SECTION crn="74447" num="01" students="35" seats="35"> 
+		<SECTION crn="74447" num="01" students="20" seats="35"> 
 			<PERIOD type="LEC" instructor="Fahey" start="1000" end="1150" location="CARNEG 206"> 
 				<DAY>0</DAY> 
 				<DAY>3</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="73498" num="02" students="35" seats="35"> 
+		<SECTION crn="73498" num="02" students="30" seats="35"> 
 			<PERIOD type="LEC" instructor="Carcasole" start="1000" end="1150" location="CARNEG 101"> 
 				<DAY>1</DAY> 
 				<DAY>4</DAY> 
@@ -49,21 +49,21 @@
 	</COURSE>
 	
 	<COURSE name="SOFTWARE DESIGN &amp; DOCUME" dept="CSCI" num="4440" credmin="4" credmax="4" gradetype=""> 
-		<SECTION crn="75741" num="01" students="20" seats="20"> 
+		<SECTION crn="75741" num="01" students="19" seats="20"> 
 			<PERIOD type="LEC" instructor="Sturman" start="1600" end="1750" location="LALLY 102"> 
 				<DAY>0</DAY> 
 				<DAY>3</DAY> 
 			</PERIOD> 
 			<NOTE>COMMUNICATION INTENSIVE</NOTE> 
 		</SECTION> 
-		<SECTION crn="73484" num="02" students="20" seats="20"> 
+		<SECTION crn="73484" num="02" students="15" seats="20"> 
 			<PERIOD type="LEC" instructor="Sturman" start="1800" end="1950" location="LALLY 104"> 
 				<DAY>0</DAY> 
 				<DAY>3</DAY> 
 			</PERIOD> 
 			<NOTE>COMMUNICATION INTENSIVE</NOTE> 
 		</SECTION> 
-		<SECTION crn="75742" num="03" students="20" seats="20"> 
+		<SECTION crn="75742" num="03" students="10" seats="20"> 
 			<PERIOD type="LEC" instructor="Kuchera" start="1800" end="1950" location="LALLY 102"> 
 				<DAY>0</DAY> 
 				<DAY>3</DAY> 
@@ -95,7 +95,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="73195" num="03" students="30" seats="30"> 
+		<SECTION crn="73195" num="03" students="11" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1000" end="1050" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -106,7 +106,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="73196" num="04" students="30" seats="30"> 
+		<SECTION crn="73196" num="04" students="20" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1000" end="1050" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -117,7 +117,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="75810" num="05" students="30" seats="30"> 
+		<SECTION crn="75810" num="05" students="17" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1200" end="1250" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -128,7 +128,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="75811" num="06" students="30" seats="30"> 
+		<SECTION crn="75811" num="06" students="27" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1200" end="1250" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -139,7 +139,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="76142" num="07" students="30" seats="30"> 
+		<SECTION crn="76142" num="07" students="19" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1200" end="1250" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -150,7 +150,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="76177" num="08" students="30" seats="30"> 
+		<SECTION crn="76177" num="08" students="1" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1200" end="1250" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -185,7 +185,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="73195" num="03" students="30" seats="30"> 
+		<SECTION crn="73195" num="03" students="10" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1000" end="1050" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -196,7 +196,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="73196" num="04" students="30" seats="30"> 
+		<SECTION crn="73196" num="04" students="10" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1000" end="1050" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -207,7 +207,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="75810" num="05" students="30" seats="30"> 
+		<SECTION crn="75810" num="05" students="5" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1200" end="1250" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -218,7 +218,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="75811" num="06" students="30" seats="30"> 
+		<SECTION crn="75811" num="06" students="3" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1200" end="1250" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -229,7 +229,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="76142" num="07" students="30" seats="30"> 
+		<SECTION crn="76142" num="07" students="7" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1200" end="1250" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 
@@ -240,7 +240,7 @@
 				<DAY>4</DAY> 
 			</PERIOD> 
 		</SECTION> 
-		<SECTION crn="76177" num="08" students="30" seats="30"> 
+		<SECTION crn="76177" num="08" students="26" seats="30"> 
 			<PERIOD type="LEC" instructor="Schmidt" start="1200" end="1250" location="DARRIN 324"> 
 				<DAY>0</DAY> 
 				<DAY>2</DAY> 

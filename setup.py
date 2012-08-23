@@ -8,7 +8,7 @@ if DEBUG:
     raise TypeError, "Still in DEBUG mode, please set config.DEBUG = False"
 
 setup(
-    name='RpiCourses',
+    name='RPICourses',
     description=md.__description__,
     license=md.__license__,
     version=md.__version__,
@@ -24,7 +24,6 @@ setup(
     test_requires=[
         'mock',
         'nose',
-        'constraint',
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',

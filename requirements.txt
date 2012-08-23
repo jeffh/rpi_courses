@@ -1,0 +1,9 @@
+BeautifulSoup==3.2.1
+colorama==0.2.4
+mock==1.0b1
+nose==1.1.2
+pyPdf==1.13
+pyconstraints==1.0.1
+python-termstyle==0.1.10
+sniffer==0.2.6
+wsgiref==0.1.2

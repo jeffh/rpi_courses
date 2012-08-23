@@ -1,4 +1,4 @@
-from pyconstraints import Problem, is_nil, BruteForceSolver
+from csp import Problem, is_nil
 
 
 __all__ = ['compute_schedules', 'TimeRange', 'Scheduler']
@@ -16,22 +16,13 @@ class TimeRange(object):
             self.start, self.end, self.days_of_week
         )
 
-    def days_conflict(self, days):
-        print self.days_of_week, days
-        for day in self.days_of_week:
-            if day in days:
-                return True
-        return False
-
     def __contains__(self, period):
-        days, start, end = period
+        days, start, end = period.days_of_week_flag, period.start, period.end
 
-        return self.days_conflict(days) and (
-            self.start <= start <= self.end or
-            start <= self.start <= end or
-            self.start <= end <= self.end or
-            start <= self.end <= end
-        )
+        return days & self.days_of_week > 0 and (self.start <= start <= self.end or \
+            start <= self.start <= end or \
+            self.start <= end <= self.end or \
+            start <= self.end <= end)
 
     def conflicts_with(self, section):
         "Returns True if the given section conflicts with this time range."
@@ -56,12 +47,11 @@ class Scheduler(object):
     ``problem``: Optional problem instance to provide. If None, the default one is created.
 
     """
-    def __init__(self, free_sections_only=True, problem=None, constraint=None):
+    def __init__(self, free_sections_only=True, problem=None):
         self.p = Problem()
         if problem is not None:
             self.p = problem
         self.free_sections_only = free_sections_only
-        self.section_constraint = constraint or section_constraint
         self.clear_excluded_times()
 
     def clear_excluded_times(self):
@@ -118,8 +108,6 @@ class Scheduler(object):
         """Internal use. Determines when the given time range conflicts with the set of
         excluded time ranges.
         """
-        if is_nil(schedule):
-            return True
         for timerange in self._excluded_times:
             if timerange.conflicts_with(schedule):
                 return False
@@ -141,14 +129,14 @@ class Scheduler(object):
             for j, course2 in enumerate(courses):
                 if i <= j:
                     continue
-                self.p.add_constraint(self.section_constraint, [course1, course2])
+                self.p.add_constraint(section_constraint, [course1, course2])
             self.p.add_constraint(self.time_conflict, [course1])
 
 
-def compute_schedules(courses=None, excluded_times=(), free_sections_only=True, problem=None, return_generator=False, section_constraint=None):
+def compute_schedules(courses=None, excluded_times=(), free_sections_only=True, problem=None, return_generator=False):
     """
     Returns all possible schedules for the given courses.
     """
-    s = Scheduler(free_sections_only, problem, constraint=section_constraint)
+    s = Scheduler(free_sections_only, problem)
     s.exclude_times(*tuple(excluded_times))
     return s.find_schedules(courses, return_generator)
