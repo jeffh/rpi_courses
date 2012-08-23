@@ -1,20 +1,14 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
-from rpi_courses import metadata as md
-
-from rpi_courses.config import DEBUG
-
-if DEBUG:
-    raise TypeError, "Still in DEBUG mode, please set config.DEBUG = False"
 
 setup(
     name='RPICourses',
     description=md.__description__,
-    license=md.__license__,
-    version=md.__version__,
-    author=md.__author__,
-    author_email=md.__author_email__,
-    url=md.__url__,
+    license='MIT',
+    version='1.0.0',
+    author='Jeff Hui',
+    author_email='jeff@jeffhui.net',
+    url='https://github.com/jeffh/rpi_courses',
     packages=find_packages(),
     requires=[
         'BeautifulSoup',
@@ -26,8 +20,7 @@ setup(
         'nose',
     ],
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        #'Development Status :: 4 - Beta',
+        'Development Status :: 4 - Beta',
         #'Development Status :: 5 - Production/Stable' # I wish
         'Intended Audience :: Developers',
         'Programming Language :: Python :: 2.6',

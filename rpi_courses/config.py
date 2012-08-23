@@ -3,11 +3,9 @@ import logging.handlers
 import sys
 
 
-DEBUG = True
 LOG_FILENAME = 'logging'
 
 logger = logging.getLogger('rpi_courses')
-logger.setLevel(logging.DEBUG)
 
 
 if hasattr(logging, 'NullHandler'):
