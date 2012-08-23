@@ -2,4 +2,4 @@ test:
 	nosetests
 
 upload:
-	python manage.py sdist upload
+	python setup.py sdist upload
