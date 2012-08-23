@@ -8,13 +8,15 @@ setup(
     name='RPICourses',
     description='A data scraping library to read course data from RPI.',
     license='MIT',
-    version='1.0.0',
+    version='1.0.1',
     author='Jeff Hui',
     author_email='jeff@jeffhui.net',
     url='https://github.com/jeffh/rpi_courses',
     packages=find_packages(),
     requires=[
         'BeautifulSoup',
+        'pyPdf',
+        'pyconstraints',
     ],
     long_description=open('README.rst').read(),
     classifiers=[
