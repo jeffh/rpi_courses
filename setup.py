@@ -8,7 +8,7 @@ setup(
     name='RPICourses',
     description='A data scraping library to read course data from RPI.',
     license='MIT',
-    version='1.0.1',
+    version='1.0.2',
     author='Jeff Hui',
     author_email='jeff@jeffhui.net',
     url='https://github.com/jeffh/rpi_courses',
@@ -20,8 +20,7 @@ setup(
     ],
     long_description=open('README.rst').read(),
     classifiers=[
-        'Development Status :: 4 - Beta',
-        #'Development Status :: 5 - Production/Stable' # I wish
+        'Development Status :: 5 - Production/Stable' # I wish
         'Intended Audience :: Developers',
         'Programming Language :: Python :: 2.6',
         'Operating System :: OS Independent',
