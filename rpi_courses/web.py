@@ -89,20 +89,23 @@ def get_comm_file(date, base_url=COMM_URL):
     req = urllib2.Request(url)
     print "Getting communication intensive list from: " + url
 
+    full_text = ""
+    tmp = None
     try:
         f = urllib2.urlopen(req)
         temp = tempfile.NamedTemporaryFile()
         temp.write(f.read())
         temp.seek(0)
+        with open(temp.name, 'rb'):
+            pdf = pyPdf.PdfFileReader(open(temp.name, 'rb'))
+            for page in pdf.pages:
+                full_text += page.extractText()
+
     except urllib2.HTTPError, e:
         print "HTTP Error:", e.code, url
     except urllib2.URLError, e:
         print "URL Error:", e.reason, url
-
-    full_text = ""
-    pdf = pyPdf.PdfFileReader(open(temp.name, 'rb'))
-    for page in pdf.pages:
-        full_text += page.extractText()
-
-    temp.close()
+    finally:
+        if temp:
+            temp.close()
     return full_text.strip()
