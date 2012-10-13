@@ -20,7 +20,7 @@ setup(
     ],
     long_description=open('README.rst').read(),
     classifiers=[
-        'Development Status :: 5 - Production/Stable' # I wish
+        'Development Status :: 5 - Production/Stable', # I wish
         'Intended Audience :: Developers',
         'Programming Language :: Python :: 2.6',
         'Operating System :: OS Independent',
