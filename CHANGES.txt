@@ -1,3 +1,15 @@
+1.0.2
+=========
+- Fixed catalog.name parsing.
+
+1.0.1
+=========
+- Improved catalog parsing
+
+1.0.0
+=========
+- Backports changes from YACS
+
 0.9.0
 =========
 - Initial release
