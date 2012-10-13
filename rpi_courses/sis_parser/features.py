@@ -49,7 +49,7 @@ def semester_feature(catalog, soup):
 
     semester_mapping = {1: 'Spring', 5: 'Summer', 9: 'Fall'}
     catalog.semester = semester_mapping[catalog.month]
-    catalog.name = catalog.semester + ' ' + catalog.year
+    catalog.name = '%s %s'.format(catalog.semester, catalog.year)
     logger.info('Catalog type: %s' % catalog.name)
 
 
