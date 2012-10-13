@@ -38,35 +38,37 @@ class CourseCatalog(object):
     # We'll call each feature we imported that ends with '_feature'.
     FEATURES = [obj for name, obj in globals().iteritems() if name.endswith('_feature')]
 
-    def __init__(self, soup=None):
+    def __init__(self, soup=None, url=None):
         """Instanciates a CourseCatalog given a BeautifulSoup instance.
         Pass nothing to initiate an empty course catalog.
         """
+        self.url = url
         if soup is not None:
             self.parse(soup)
 
     @staticmethod
-    def from_string(html_str):
+    def from_string(html_str, url=None):
         "Creates a new CourseCatalog instance from an string containing xml."
         return CourseCatalog(BeautifulSoup(_remove_divs(html_str),
             convertEntities=BeautifulSoup.HTML_ENTITIES
-        ))
+        ), url)
 
     @staticmethod
-    def from_stream(stream):
+    def from_stream(stream, url=None):
         "Creates a new CourseCatalog instance from a filehandle-like stream."
-        return CourseCatalog.from_string(stream.read())
+        return CourseCatalog.from_string(stream.read(), url)
 
     @staticmethod
     def from_file(filepath):
         "Creates a new CourseCatalog instance from a local filepath."
         with open(filepath) as f:
-            return CourseCatalog.from_stream(f)
+            return CourseCatalog.from_stream(f, filepath)
 
     @staticmethod
     def from_url(url):
         "Creates a new CourseCatalog instance from a given url."
-        return CourseCatalog.from_string(get(url))
+        catalog = CourseCatalog.from_string(get(url), url)
+        return catalog
 
     def parse(self, soup):
         "Parses the soup instance as RPI's XML course catalog file."

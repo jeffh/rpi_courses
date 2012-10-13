@@ -47,7 +47,7 @@ def list_sis_files(url_base=SIS_URL):
     date = datetime.date(year=2011, month=1, day=1)
     today = datetime.date.today()
     urls = []
-    while date.year <= today.year:
+    while date.year <= today.year + 1:
         urls.extend(list_sis_files_for_date(date, url_base=url_base))
         date = datetime.date(year=date.year + 1, month=1, day=1)
     return urls

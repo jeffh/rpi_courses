@@ -5,6 +5,7 @@ automatically imported by the CourseCatalog class, postfix the
 function name with '_feature'
 """
 import datetime
+import re
 from rpi_courses.utils import FrozenDict, safeInt
 from rpi_courses.config import logger, DEBUG
 from rpi_courses.models import CrossListing, Course, Period, Section
@@ -19,18 +20,36 @@ def timestamp_feature(catalog, soup):
     catalog.datetime = datetime.datetime.fromtimestamp(catalog.timestamp)
     logger.info('Catalog last updated on %s' % catalog.datetime)
 
+def _text(nodes, sep='\n'):
+    sb = []
+    for node in nodes:
+        sb.append(node.text.strip())
+    return sep.join(sb)
+
+RE_SEMESTER_RANGE = re.compile(r'(?P<start_month>[A-Za-z]+) +(?P<start_day>\d+) +- +(?P<end_month>[A-Za-z]+) +(?P<end_day>\d+),? +(?P<year>\d+)')
+RE_SEMESTER_URL = re.compile(r'^.+zs(?P<year>\d{4})(?P<month>\d{2}).+$')
 
 def semester_feature(catalog, soup):
     """The year and semester information that this xml file hold courses for.
     """
-    catalog.name = soup.find('h3').text.strip()
-    raw = soup.find('h3').text.split(' Session ')
-    catalog.year = int(raw[1])
+    raw = _text(soup.findAll('h3')).split('\n')[1]
+    print 'raw', raw
+    match = RE_SEMESTER_RANGE.match(raw)
+    catalog.year = int(match.group('year'))
 
-    month_mapping = {'Spring': 1, 'Summer': 5, 'Fall': 9}
-    catalog.semester = raw[0]
-    catalog.month = month_mapping[raw[0]]
+    #month_mapping = {'Spring': 1, 'Summer': 5, 'Fall': 9}
+    month_mapping = {'january': 1, 'may': 5, 'august': 9}
+    catalog.month = month_mapping[match.group('start_month').lower()]
 
+    if catalog.url:
+        match = RE_SEMESTER_URL.match(catalog.url)
+        if match:
+            catalog.year = int(match.group('year'))
+            catalog.month = int(match.group('month'))
+
+    semester_mapping = {1: 'Spring', 5: 'Summer', 9: 'Fall'}
+    catalog.semester = semester_mapping[catalog.month]
+    catalog.name = catalog.semester + ' ' + catalog.year
     logger.info('Catalog type: %s' % catalog.name)
 
 

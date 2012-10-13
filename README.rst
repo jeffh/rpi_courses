@@ -23,15 +23,15 @@ To install::
 
 Then you can import it to your python scripts::
 
-    from rpi_courses import CourseCatalog, list_xml_files
+    from rpi_courses import CourseCatalog, list_sis_files
 
-``list_xml_files`` accepts an optional URL argument, the default url is
-assumed to be "http://sis.rpi.edu/reg/rocs/". This function expects to
+``list_sis_files`` accepts an optional URL argument, the default url is
+assumed to be "http://sis.rpi.edu/reg/". This function expects to
 read an apache-style file listing page. It scrapes all the files listed
 there that end with a xml file extension and returns the full URLs to those
 files::
 
-    >>> files = list_xml_files()
+    >>> files = list_sis_files()
     >>> files
     [u'http://sis.rpi.edu/reg/rocs/201001.xml',
      u'http://sis.rpi.edu/reg/rocs/201005.xml',
