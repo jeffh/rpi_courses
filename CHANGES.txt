@@ -1,3 +1,7 @@
+1.0.3
+=========
+- Fixed failure catch for 404 of the course catalog
+
 1.0.2
 =========
 - Fixed catalog.name parsing.
