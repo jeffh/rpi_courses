@@ -90,7 +90,7 @@ def get_comm_file(date, base_url=COMM_URL):
     print "Getting communication intensive list from: " + url
 
     full_text = ""
-    tmp = None
+    temp = None
     try:
         f = urllib2.urlopen(req)
         temp = tempfile.NamedTemporaryFile()
