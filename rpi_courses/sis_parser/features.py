@@ -33,7 +33,6 @@ def semester_feature(catalog, soup):
     """The year and semester information that this xml file hold courses for.
     """
     raw = _text(soup.findAll('h3')).split('\n')[1]
-    print 'raw', raw
     match = RE_SEMESTER_RANGE.match(raw)
     catalog.year = int(match.group('year'))
 
