@@ -29,23 +29,23 @@ def get(url, last_modified=None):
 def list_sis_files_for_date(date=None, url_base=SIS_URL):
     date = date or datetime.datetime.now()
     format = '%(base)s%(prefix)s%(year).4d%(month).2d.htm'
-    base = []
+    urls = []
     months = (1, 5, 9)
     prev_m = None
     prefixes = ['zs', 'zfs']
     def add_date(year, month):
         for prefix in prefixes:
-            base.append(format % dict(base=url_base, prefix=prefix, year=date.year, month=month))
-            base.append(format % dict(base=url_base, prefix=prefix, year=date.year, month=month))
+            urls.append(format % dict(base=url_base, prefix=prefix, year=year, month=month))
     for m in months:
         if m >= date.month:
-            add_date(date.year, m)
             if prev_m and prev_m < date.month:
                 add_date(date.year, prev_m)
+            add_date(date.year, m)
         prev_m = m
-    if not base:
-        add_date(date.year + 1, 1)
-    return base
+    if not urls:
+        add_date(date.year, months[-1])
+        add_date(date.year + 1, months[0])
+    return urls
 
 
 def list_sis_files(url_base=SIS_URL):
