@@ -4,7 +4,7 @@ catalog data. This isn't your web.py web dev framework!
 import urllib2
 import datetime
 import tempfile
-import pyPdf
+import PyPDF2 as pyPdf
 from contextlib import closing
 
 from BeautifulSoup import BeautifulSoup
