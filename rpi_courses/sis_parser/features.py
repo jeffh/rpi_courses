@@ -183,6 +183,9 @@ def parse_tables(node):
         except (IndexError, ValueError):
             return None
 
+    def cache_key(course_dict):
+        return course_dict['dept'] + course_dict['num']
+
     for row in rows[2:]:
         course = {'sections': []}
         section = {'notes': set(), 'periods': []}
@@ -198,7 +201,7 @@ def parse_tables(node):
             course['dept'], course['num'], section['num'] = parts[1].split('-', 2)
             # course name
             course['name'] = G(cells, 'Course Title').text.strip()
-            existing_obj = cache.get(course['name'] + course['dept'] + course['num'])
+            existing_obj = cache.get(cache_key(course))
             if existing_obj:
                 course = existing_obj
 
@@ -230,7 +233,7 @@ def parse_tables(node):
             # link up
             section['periods'].append(period)
             course['sections'].append(section)
-            cache[course['name'] + course['dept'] + course['num']] = course
+            cache[cache_key(course)] = course
 
             if not existing_obj:
                 courses.append(course)
