@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -e
+
+function help {
+    echo "Usage: $0 COMMAND"
+    echo
+    echo "COMMANDs:"
+    echo " upload - Uploads to pypi"
+    echo " test   - Runs all tests"
+    echo
+}
+
+function upload {
+	python setup.py sdist upload
+}
+
+function tests {
+    py.test
+}
+
+case "$1" in
+    upload) upload ;;
+    tests) tests ;;
+    *) help ;;
+esac
